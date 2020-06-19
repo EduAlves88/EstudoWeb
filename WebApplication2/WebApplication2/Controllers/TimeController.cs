@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,10 +7,11 @@ using WebApplication2.Models;
 using WebApplication2.Repositorio;
 
 namespace WebApplication2.Controllers
-{//Controller dos times
+{
     public class TimeController : Controller
     {
         private TimeRepositorio _repositorio;
+        
         // GET: Obter Time
         public ActionResult ObterTimes()
         {
@@ -18,12 +19,14 @@ namespace WebApplication2.Controllers
             ModelState.Clear();
             return View(_repositorio.ObterTimes());
         }
+        
         //GET: Adicionar time
         [HttpGet]
         public ActionResult IncluirTime()
         {
             return View();
         }
+        
         //POST: Adicionar time
         [HttpPost]
         public ActionResult IncluirTime(Times timeObj)
@@ -37,7 +40,6 @@ namespace WebApplication2.Controllers
                     if (_repositorio.AdicionarTime(timeObj))
                     {
                         ViewBag.Mensagem = "Time Cadastrado com Sucesso!!!";
-                        
                     }
                 }
                 return View();
@@ -47,6 +49,7 @@ namespace WebApplication2.Controllers
                 return View("ObterTimes");
             }
         }
+        
         //GET: Editar time
         [HttpGet]
         public ActionResult EditarTime(int id)
@@ -54,6 +57,7 @@ namespace WebApplication2.Controllers
             _repositorio = new TimeRepositorio();
             return View(_repositorio.ObterTimes().Find(t => t.TimeId == id));
         }
+        
         //POST: Editar time
         [HttpPost]
         public ActionResult EditarTime(Times timeObj)
@@ -62,16 +66,15 @@ namespace WebApplication2.Controllers
             {
                 _repositorio = new TimeRepositorio();
                 _repositorio.AtualizarTime(timeObj);
-                return RedirectToAction("ObterTimes");
-           
+                return RedirectToAction("ObterTimes");           
             }
             catch (Exception)
             {
                 return View("ObterTimes");
             }
         }
-        //GET: Excluir time
         
+        //GET: Excluir time        
         public ActionResult ExcluiTime (int id)
         {
             try
