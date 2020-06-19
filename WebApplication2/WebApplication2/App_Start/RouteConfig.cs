@@ -16,6 +16,7 @@ namespace WebApplication2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
+                // Nome do controller e da action que irá iniciar a aplicação
                 defaults: new { controller = "Time", action = "ObterTimes", id = UrlParameter.Optional }
             );
         }
