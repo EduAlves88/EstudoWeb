@@ -7,7 +7,7 @@ using WebApplication2.Models;
 using WebApplication2.Repositorio;
 
 namespace WebApplication2.Controllers
-{
+{//Controller dos times
     public class TimeController : Controller
     {
         private TimeRepositorio _repositorio;
