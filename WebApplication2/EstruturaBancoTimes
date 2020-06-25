@@ -1,7 +1,32 @@
 Banco de dados deve conter a seguinte estrutura:
 
 
-  @TimeId int, 
-	@Time nvarchar(50), 
-	@Estado char(2), 
-	@Cores nvarchar(50)
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BD_Testecs-
+	Times-
+		@TimeId int, 
+		@Time nvarchar(50), 
+		@Estado char(2), 
+		@Cores nvarchar(50)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+	
+Na String de configuração do meu sqlservice, encontrada em web.config usei a seguinte:
+
+<connectionStrings>
+		<add name="stringConexao" connectionString="Server=DESKTOP-9P3UCK2\SQLEXPRESS19;Database=BD_Testecs;Integrated Security=True;" providerName="System.Data.SqlClient" />
+</connectionStrings>
+
+
+Onde:
+
+add name= nome da string usada no código c#
+connectionString= Caminho local da sua base de dados
+Database= Nome dado ao banco em sua criação
+
+
+
+O restante são configurações à replicar!
