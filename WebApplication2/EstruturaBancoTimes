@@ -1,0 +1,7 @@
+Banco de dados deve conter a seguinte estrutura:
+
+
+  @TimeId int, 
+	@Time nvarchar(50), 
+	@Estado char(2), 
+	@Cores nvarchar(50)
